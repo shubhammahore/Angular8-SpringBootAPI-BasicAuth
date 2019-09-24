@@ -1,0 +1,39 @@
+  <h1>Ipos</h1>
+<form #postForm="ngForm" (ngSubmit)="OnRegister(postForm.value)" class="form-group">
+    <div class="row">
+        <div class="col-lg-3">
+          Company Name <input type="text" ngModel name="companyname" required class="form-control"> 
+          <small id="Help" class="form-text text-muted">We'll never share your info with anyone else.</small>
+        </div>
+        <div class="col-lg-3">
+          Stock Exchange <input type="text" ngModel name="Stockexchange"  required class="form-control">
+        </div>
+        <div class="col-lg-3"> 
+          Price Per Share  <input type="text" ngModel name="price_pershare" required class="form-control">
+        </div>
+        <div class="col-lg-3">
+          Total Share <input type="text" ngModel name="totalshare" required class="form-control"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+          Open Time <input type="text" ngModel name="opentime"  required class="form-control">
+        </div>
+        <div class="col-lg-3">  
+          Remarks  <input type="text" ngModel name="remarks" required class="form-control" >
+        </div>
+        
+    </div>
+        <div class="col-md-2 center-block btns"><br>
+          <button type="submit" class="form-control btn-primary">Register </button> 
+        </div>
+</form>
+<button class="btn btn-primary"  (click)="onClickSubmit()">Get IPOs </button>
+<div *ngIf="getIPOsList">
+<ag-grid-angular 
+    style="width: 1200px; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    >
+</ag-grid-angular>

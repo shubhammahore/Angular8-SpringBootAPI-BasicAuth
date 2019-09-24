@@ -1,0 +1,50 @@
+<h1>Company Home</h1>
+<form #postForm="ngForm" (ngSubmit)="OnRegister(postForm.value)" class="form-group">
+    <div class="row">
+        <div class="col-lg-3">
+          Company Name <input type="text" ngModel name="companyname" required class="form-control"> 
+          <small id="Help" class="form-text text-muted">We'll never share your info with anyone else.</small>
+        </div>
+        <div class="col-lg-3">
+          Turn Over <input type="text" ngModel name="turnover"  required class="form-control">
+        </div>
+        <div class="col-lg-3"> 
+          Board of Director  <input type="text" ngModel name="boardofdirec" required class="form-control">
+        </div>
+        <div class="col-lg-3">
+          Listed in stock <input type="text" ngModel name="listedinstock" required class="form-control"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+          Sector <input type="text" ngModel name="sector"  required class="form-control">
+        </div>
+        <div class="col-lg-3">  
+          About  <input type="text" ngModel name="about" required class="form-control" >
+        </div>
+        <div class="col-lg-3">  
+          Stockcode <input type="text" ngModel name="stockcode" required class="form-control"> 
+        </div>
+        <div class="col-lg-3">
+          Ceo <input type="text" ngModel name="ceo"  required class="form-control" >
+        </div>
+    </div>
+        <div class="col-md-2 center-block btns"><br>
+          <button type="submit" class="form-control btn-primary">Register </button> 
+        </div>
+</form>
+
+
+
+
+
+<button class="btn btn-primary"  (click)="onClickSubmit()">Get ALL Company </button>
+
+<div *ngIf="getCompanyList">
+<ag-grid-angular 
+    style="width: 1200px; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    >
+</ag-grid-angular>

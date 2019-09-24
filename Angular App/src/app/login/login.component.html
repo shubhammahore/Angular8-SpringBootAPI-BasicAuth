@@ -1,0 +1,21 @@
+<p>
+  Login Page
+</p>
+<form #postForm="ngForm" (ngSubmit)="OnLogin(postForm.value)" class="form-group">
+  <div class="row">
+      <div class="col-lg-3">
+        Username <input type="text" ngModel name="username" required class="form-control"> 
+        <small id="Help" class="form-text text-muted">We'll never share your info with anyone else.</small>
+      </div>
+     
+  </div>
+  <div class="row">
+      <div class="col-lg-3">
+        Password <input type="password" ngModel name="password"  required class="form-control">
+      </div>
+     
+  </div>
+      <div class="col-md-2 center-block btns"><br>
+        <button type="submit" class="form-control btn-primary">Login </button> 
+      </div>
+</form>
